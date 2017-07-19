@@ -1,0 +1,24 @@
+
+- Create a new component class using (React.createClass). 
+Components have one requirement; they must implement render, 
+a function that tells the component what to... render. 
+I honestly couldn't think of another word.
+
+
+import Button from '../Button'
+import style from './style'
+
+const MyComponent = ({ headerText, buttons }) => (
+  <View style={style.container}>
+    <View style={style.headerWrapper}>
+      <Text style={style.headerText}>
+        {headerText}
+      </Text>
+    </View>
+    <View style={style.contentWrapper}>
+      {buttons.map(button => (
+        <Button {...button} />
+      )}
+    </View>
+  </View>
+)
